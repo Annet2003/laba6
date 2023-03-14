@@ -27,8 +27,12 @@ public:
         this->x = x;
         this->y = y;
     }
+    int getX { return x; }
+    int getY{ return y; }
+        
+        
     bool operator==(const Point2D& point) {
-        if (x == point.x && y == point.y) return 1;
-        else return 0;
+    if (x == point.x && y == point.y) return 1;
+    else return 0;
     }
 };

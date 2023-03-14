@@ -76,70 +76,19 @@ ostream& operator<<(ostream& out, const Arena& a) {
 }
 
 void Prey::AutoMove(const Arena& a, int z) {
-    int q;
-    if (z == 1) {
-        q = rand() % 8;
+    int direction;
+
+    if (isNPC())
+    {
+        direction = rand() % 8;
     }
-    else {
-        cout << "Куда идти?\n0-вверх-влево 1-вверх 2-вверх-вправо 3-влево 4-вправо 5-вниз-влево 6-вниз 7-вниз-вправо" << endl;
-        cin >> q;
+    else
+    {
+        cout "Куда идти? ===";
+        cin >> direction;
+
     }
-    switch (q) {
-    case 0:
-        if (location.x != 1 && location.y != 1) {
-            location.x -= 1;
-            location.y -= 1;
-        }
-        else cout << "Выход за пределы" << endl;
-        break;
-    case 1:
-        if (location.y != 1) {
-            location.y -= 1;
-        }
-        else cout << "Выход за пределы" << endl;
-        break;
-    case 2:
-        if (location.x != a.w && location.y != 1) {
-            location.x += 1;
-            location.y -= 1;
-        }
-        else cout << "Выход за пределы" << endl;
-        break;
-    case 3:
-        if (location.x != 1) {
-            location.x -= 1;
-        }
-        else cout << "Выход за пределы" << endl;
-        break;
-    case 4:
-        if (location.x != a.w) {
-            location.x += 1;
-        }
-        else cout << "Выход за пределы" << endl;
-        break;
-    case 5:
-        if (location.x != 1 && location.y != a.l) {
-            location.x -= 1;
-            location.y += 1;
-        }
-        else cout << "Выход за пределы" << endl;
-        break;
-    case 6:
-        if (location.y != a.l) {
-            location.y += 1;
-        }
-        else cout << "Выход за пределы" << endl;
-        break;
-    case 7:
-        if (location.x != a.w && location.y != a.l) {
-            location.x += 1;
-            location.y += 1;
-        }
-        else cout << "Выход за пределы" << endl;
-        break;
-    default:
-        break;
-    }
+    MoveTo(direction, range);
 }
 
 void Predator::AutoMove(const Arena& ar, int z) {
