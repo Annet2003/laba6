@@ -11,7 +11,7 @@ class Prey;
 class Predator;
 class Arena;
 
-ostream& operator<<(ostream& out, const Arena& a) {
+/*ostream& operator<<(ostream& out, const Arena& a) {
     cout << "\033[2J\033[1;1H";
     cout << "   ";
     for (int i = 0; i < a.w; i++) cout << i + 1 << " ";
@@ -73,9 +73,15 @@ ostream& operator<<(ostream& out, const Arena& a) {
     for (int i = 0; i < a.w + 1; i++) cout << "--";
     cout << "\n";
     return out;
+}*/
+
+ostream& operator<<(ostream& out, const Predator& p)
+{
+    out << "Имя хищника: " << p.name << "\n Координаты хищника: " << p.location << endl;
+    return out;
 }
 
-void Prey::AutoMove(const Arena& a, int z) {
+/*void Prey::AutoMove(const Arena& a, int z) {
     int direction;
 
     if (isNPC())
@@ -89,9 +95,9 @@ void Prey::AutoMove(const Arena& a, int z) {
 
     }
     MoveTo(direction, range);
-}
+}*/
 
-void Predator::AutoMove(const Arena& ar, int z) {
+/*void Predator::AutoMove(const Arena& ar, int z) {
     int q;
     int a;
     if (z == 0) {
@@ -100,7 +106,7 @@ void Predator::AutoMove(const Arena& ar, int z) {
     }
     else {
         int s = 0;
-        cout << "Куда идти?\n0-вверх 1-вправо 2-вниз 3-влево" << endl;
+        cout << "Куда идти?\n 0-вверх 1-вправо 2-вниз 3-влево" << endl;
         cin >> q;
 
         do {
@@ -137,12 +143,12 @@ void Predator::AutoMove(const Arena& ar, int z) {
         break;
     }
 }
+*/
 
 
 
 
-
-bool check(const Prey& prey, const Predator& predator) {
+/*bool check(const Prey& prey, const Predator& predator) {
     if (prey.location.x == predator.location.x && abs(prey.location.y - predator.location.y) <= 5) {
         return 1;
     }
@@ -157,4 +163,4 @@ bool check(const Prey& prey, const Predator& predator) {
 bool check1(const Prey& prey, const Predator& predator) {
     if ((prey.location.x == predator.location.x) && (prey.location.y == predator.location.y)) return 1;
     else return 0;
-}
+}*/

@@ -23,15 +23,17 @@ public:
         return out;
     }
 
-    void setPoint(int x, int y) {
+    void setPoint(int x, int y) 
+    {
         this->x = x;
         this->y = y;
     }
-    int getX { return x; }
-    int getY{ return y; }
+    int getX{ return x;}
+    int getY{ return y;}
         
         
-    bool operator==(const Point2D& point) {
+    bool operator==(const Point2D& point) 
+    {
     if (x == point.x && y == point.y) return 1;
     else return 0;
     }
