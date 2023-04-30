@@ -7,7 +7,7 @@ struct PreyTest : public testing::Test
 	Prey* prey;
 	void SetUp()
 	{
-		prey = new Prey("Tester ", Point2D())
+		prey = new Prey("Tester Sergey", Point2D(7, 5))
 	}
 	void TearDown()
 	{
@@ -15,6 +15,7 @@ struct PreyTest : public testing::Test
 	}
 
 };
+// тест инициализации
 TEST_F(PreyTest, init_class)
 {
 	EXPECT_STREQ(prey->getName().c_str(), "Tester Sergey");
