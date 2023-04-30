@@ -10,7 +10,7 @@ class Character
 private:
     std::string name; // имя персонажа
     Point2D location; // текущее положение персонажа
-    bool npc; // признак NPC
+    bool npc;         // признак NPC
 
 public:
     // Character(const std::string& name, const Point2D& location, bool npcflag = 0) : name(name), location(location), npc(npcflag) {   }
@@ -102,7 +102,7 @@ private:
     //friend class Arena;
     //std::string name;
     //Point2D location;
-    const int range = 1;
+    const int MaxRange = 1;
 public:
     Prey(const std::string& name, const Point2D& location, bool npcflag = 0); //: Character (name, location, npcflag) {   }
     int askDirection();
@@ -155,7 +155,7 @@ public:
         
     }*/
 
-    int AskRange()
+    /*int AskRange()
     {
         do {
             int range;
@@ -203,7 +203,8 @@ public:
         }
 
         moveTo(direction, range);
-    }
+    }*/
+
     /*void MoveTo(int x, int y) {
         location.setPoint(x, y);
     }
@@ -211,6 +212,13 @@ public:
     friend ostream& operator<<(ostream&, const Predator&);
     friend bool check(const Prey& prey, const Predator& predator);
     friend bool check1(const Prey& prey, const Predator& predator);*/
+
+    int askRange();
+
+    int askDirection();
+
+    void autoMove() override;
+
 };
 //ostream& operator<<(ostream& out, const Predator& p) {
 //    out << "Имя хищника - " << p.name << "\nКоординаты хищника - " << p.location << endl;

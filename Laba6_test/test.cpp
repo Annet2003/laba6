@@ -1,4 +1,4 @@
-#include "pch.h"
+/*#include "pch.h"
 #include "../tmp.h"
 
 TEST(TestCaseName, TestName) {
@@ -25,7 +25,11 @@ TEST(TestCaseName, TestName1) {
 	EXPECT_EQ(pr.getx(), 10);
 	EXPECT_EQ(pr.gety(), 55);
 
-}
+}*/
+
+#include "gtest/gtest.h"
+#include "test_Point2D/h"
+#include "test_Prey/h"
 
 int main(int argc, char** argv)
 {
